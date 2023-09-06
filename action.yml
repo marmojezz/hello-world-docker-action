@@ -1,0 +1,16 @@
+# action.yml
+name: 'Hello World Doker Action"
+description: 'Greet someone and record the tie'
+inputs:
+  who_to_treet:  #id of input
+  description: 'Who to great'
+  required: true
+  default: 'World'
+outputs:
+  time: # id of output
+    description: 'The time we greeted you'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.who-to-greet }}
